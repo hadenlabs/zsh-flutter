@@ -9,12 +9,12 @@
 #
 
 function install_flutter {
-    wget -P "$HOME/.flutter" -O flutter.zip https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.0.0-stable.zip && unzip -d "$HOME/.flutter" flutter.zip
+    wget -P "$HOME/.other" -O flutter.zip https://storage.googleapis.com/flutter_infra/releases/stable/macos/flutter_macos_v1.0.0-stable.zip && unzip -d "$HOME/.other" flutter.zip
 
 }
 
 function load_flutter {
-    [[ -e "$HOME/.flutter/flutter/bin" ]] && export PATH="$PATH:$HOME/.flutter/flutter/bin"
+    [[ -e "$HOME/.other/flutter/bin" ]] && export PATH="$PATH:$HOME/.other/flutter/bin"
 }
 
 load_flutter
