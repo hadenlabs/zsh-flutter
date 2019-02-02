@@ -18,7 +18,7 @@ Functions and tools for zsh
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
    :target: LICENSE
 
-:Version: 0.1.1
+:Version: 0.1.0
 :Web: https://github.com/luismayta/zsh-flutter
 :Download: http://github.com/luismayta/zsh-flutter
 :Source: http://github.com/luismayta/zsh-flutter
