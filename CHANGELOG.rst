@@ -11,6 +11,8 @@ This file uses change log convention from `keep a CHANGELOG`_.
 `0.1.1`_ - 2019-02-02
 ++++++++++++++++++++++
 
+- Fix: load flutter in path generate
+
 `0.1.0`_ - 2019-02-02
 ++++++++++++++++++++++
 
