@@ -33,6 +33,7 @@ function flutter::load {
     [[ -e "$HOME/.other/flutter" ]] && export FLUTTER_ROOT="$HOME/.other/flutter"
     [[ -e "$HOME/.other/flutter/bin" ]] && export PATH="$PATH:$FLUTTER_ROOT/bin"
     [[ -e "$HOME/.other/flutter/bin/cache/dart-sdk/" ]] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk/"
+    [[ -e "$HOME/.other/flutter/bin/cache/dart-sdk/bin" ]] && export PATH="$PATH:$FLUTTER_DART_SDK/bin"
 }
 
 flutter::load
