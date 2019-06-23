@@ -6,7 +6,7 @@ Build
 
 |Build Status| |GitHub issues| |GitHub license|
 
-:Version: 0.1.1
+:Version: 0.2.0
 :Web: https://github.com/luismayta/zsh-flutter
 :Download: https://github.com/luismayta/zsh-flutter
 :Source: https://github.com/luismayta/zsh-flutter
