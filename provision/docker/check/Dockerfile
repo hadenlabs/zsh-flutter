@@ -1,12 +1,11 @@
-FROM python:3.6.4
+FROM python:3.6.5
 
 MAINTAINER Luis Mayta <@slovacus>
 
 ARG stage
 LABEL NAME zsh-flutter-check-$stage
 
-COPY ./requirements/ /usr/src/requirements/
-COPY ./requirements.txt /usr/src/requirements.txt
+COPY Pipfile Pipfile.lock /usr/src/
 
 # set working directory to /usr/src/
 WORKDIR /usr/src/
@@ -17,7 +16,11 @@ RUN apt-get update \
   git-core \
   shellcheck \
   # install python dependencies
-  && pip install -r /usr/src/requirements/quality.txt \
+  # update pip
+  && pip install --upgrade pip \
+# install pipenv
+  && pip install pipenv \
+  && pipenv install --dev --ignore-pipfile --system \
   && apt-get purge \
   && apt-get autoremove  \
   && rm -rf /var/lib/apt/lists/*
