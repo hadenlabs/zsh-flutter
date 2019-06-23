@@ -1,27 +1,15 @@
-===========
 zsh-flutter
 ===========
 
-Functions and tools for zsh
+Build
+-----
 
-.. code-block:: bash
-
-    antibody bundle luismayta/zsh-flutter
-
-
-|ci| |GitHub issues| |GitHub license|
-
-.. |ci| image:: https://travis-ci.org/luismayta/zsh-flutter.svg
-   :target: https://travis-ci.org/luismayta/zsh-flutter
-.. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-flutter.svg
-   :target: https://github.com/luismayta/zsh-flutter/issues
-.. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-   :target: LICENSE
+|Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.1.1
 :Web: https://github.com/luismayta/zsh-flutter
-:Download: http://github.com/luismayta/zsh-flutter
-:Source: http://github.com/luismayta/zsh-flutter
+:Download: https://github.com/luismayta/zsh-flutter
+:Source: https://github.com/luismayta/zsh-flutter
 :Keywords: zsh-flutter
 
 .. contents:: Table of Contents:
@@ -118,7 +106,7 @@ Team
 +---------------+
 | |Luis Mayta|  |
 +---------------+
-| `luis mayta`_ |
+| `Luis Mayta`_ |
 +---------------+
 
 License
@@ -131,6 +119,16 @@ Changelog
 
 Please see `CHANGELOG`_ for more information what
 has changed recently.
+
+Contributing
+------------
+
+Contributions are welcome!
+
+Review the `CONTRIBUTING`_ for details on how to:
+
+* Submit issues
+* Submit pull requests
 
 Contact Info
 ------------
@@ -156,6 +154,7 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`hadenlabs`: https://github.com/hadenlabs
 .. _`luis mayta`: https://github.com/luismayta
 
+
 .. _`Github`: https://github.com/luismayta
 .. _`Linkedin`: https://www.linkedin.com/in/luismayta
 .. _`Email`: slovacus@gmail.com
@@ -163,6 +162,13 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`Twitter`: https://twitter.com/slovacus
 .. _`Website`: http://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
+
+.. |Build Status| image:: https://travis-ci.org/luismayta/zsh-flutter.svg
+   :target: https://travis-ci.org/luismayta/zsh-flutter
+.. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-flutter.svg
+   :target: https://github.com/luismayta/zsh-flutter/issues
+.. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
+   :target: LICENSE
 
 .. Team:
 .. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
@@ -175,3 +181,9 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
    :target: https://github.com/luismayta/zsh-flutter
 .. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
    :target: http://www.zsh.org
+
+.. Dependences:
+
+.. _Python 3.6.5: https://www.python.org/downloads/release/python-365
+.. _Docker: https://www.docker.com/
+.. _Docker Compose: https://docs.docker.com/compose/
