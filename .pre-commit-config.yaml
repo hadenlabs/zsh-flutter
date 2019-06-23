@@ -25,10 +25,6 @@ repos:
     -   id: check-ast
         language_version: python3
     -   id: debug-statements
-    -   id: autopep8-wrapper
-        args:
-        - -i
-        - --ignore=E501,D205
         language_version: python3
     -   id: double-quote-string-fixer
     -   id: check-docstring-first
@@ -61,7 +57,7 @@ repos:
         args:
         - --exclude=SC1072,SC1073,SC2068
 -   repo: https://github.com/asottile/add-trailing-comma
-    rev: v1.2.0
+    rev: v1.3.0
     hooks:
     -   id: add-trailing-comma
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
