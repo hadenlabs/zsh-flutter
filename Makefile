@@ -8,25 +8,24 @@ OS := $(shell uname)
 
 PROJECT := zsh-flutter
 
-PYTHON_VERSION=3.6.4
+PYTHON_VERSION=3.6.5
 PYENV_NAME="${PROJECT}"
 
 # Configuration.
 SHELL := /bin/bash
 ROOT_DIR=$(shell pwd)
 MESSAGE:=🍺️
-MESSAGE_HAPPY:="${MESSAGE} Happy Coding"
+MESSAGE_HAPPY:="Done! ${MESSAGE} Now Happy Coding"
 SOURCE_DIR=$(ROOT_DIR)/
 REQUIREMENTS_DIR=$(ROOT_DIR)/requirements
 PROVISION_DIR:=$(ROOT_DIR)/provision
 FILE_README:=$(ROOT_DIR)/README.rst
-KEYS_DIR:="${HOME}/.ssh"
 PATH_DOCKER_COMPOSE:=provision/docker-compose
 
-pip_install := pip install -r
+pipenv_install := pipenv install
 docker-compose:=docker-compose -f docker-compose.yml
 
-include extras/make/*.mk
+include provision/make/*.mk
 
 help:
 	@echo '${MESSAGE} Makefile for ${PROJECT}'
@@ -54,10 +53,8 @@ endif
 	@echo
 
 setup: clean
-	$(pip_install) "${REQUIREMENTS_DIR}/setup.txt"
-	@if [ -e "${REQUIREMENTS_DIR}/private.txt" ]; then \
-			$(pip_install) "${REQUIREMENTS_DIR}/private.txt"; \
-	fi
+	@echo "=====> loading packages..."
+	$(pipenv_install) --dev --python ${PYTHON_VERSION}
 	pre-commit install
 	cp -rf .hooks/prepare-commit-msg .git/hooks/
 	@if [ ! -e ".env" ]; then \
@@ -65,9 +62,5 @@ setup: clean
 	fi
 
 environment: clean
-	@if [ -e "$(HOME)/.pyenv" ]; then \
-		eval "$(pyenv init -)"; \
-		eval "$(pyenv virtualenv-init -)"; \
-	fi
-	pyenv virtualenv ${PYTHON_VERSION} ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
-	pyenv activate ${PYENV_NAME} >> /dev/null 2>&1 || echo $(MESSAGE_HAPPY)
+	@echo "=====> loading virtualenv ${PYENV_NAME}..."
+	pipenv shell --fancy
