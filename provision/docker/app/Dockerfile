@@ -1,4 +1,4 @@
-FROM python:3.6.4-alpine
+FROM python:3.7.3
 
 MAINTAINER Luis Mayta <@slovacus>
 
@@ -7,26 +7,32 @@ ARG stage
 LABEL NAME zsh-flutter-app-$stage
 
 ENV PACKAGES bash \
-  zsh \
-  curl \
-  bison \
-  build-base \
-  git \
+        git \
   gcc \
   libc-dev \
-  libmagic \
-  linux-headers \
   make \
   musl-dev \
   openssl \
-  pcre-dev \
-  zlib-dev
+  gcc \
+  libgdal20 \
+  libev-dev
+
 
 COPY Pipfile Pipfile.lock /usr/src/
 
 # set working directory to /usr/src/
 WORKDIR /usr/src/
 
-RUN apk add --no-cache --update $PACKAGES \
+RUN  groupadd -g 500 -r python \
+  && groupadd developer \
+  && useradd -m -g developer -G python developer \
+  && chown -R developer:python /usr/local/bin \
+  && mkdir -p /usr/src \
+  && chown -R developer /usr/src \
+  && apt-get update -y \
+  && apt-get install -y $PACKAGES \
   && pip3 install pipenv \
-  && pipenv install --ignore-pipfile --system
+  && pipenv install --dev \
+  && pipenv shell --fancy \
+  && apt-get purge \
+  && rm -rf /var/lib/apt/lists/*
