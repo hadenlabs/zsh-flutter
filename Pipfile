@@ -20,16 +20,15 @@ pytest = "*"
 tox = "*"
 ipython = "*"
 parso = "*"
-pyyaml = "*"
-
-[packages]
-pyyaml = "*"
 bumpversion = "*"
 bumplus = "*"
 pre-commit = "*"
+
+[packages]
+pyyaml = "*"
 
 [scripts]
 test = "pytest"
 
 [requires]
-python_version = "3.6.5"
+python_version = "3.7.3"
