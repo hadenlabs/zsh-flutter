@@ -3,27 +3,39 @@
 #
 
 OS := $(shell uname)
-.PHONY: help build up requirements clean lint test help
+.PHONY: help
 .DEFAULT_GOAL := help
+
+HAS_PIP := $(shell command -v pip;)
+HAS_PIPENV := $(shell command -v pipenv;)
+
+ifdef HAS_PIPENV
+	PIPENV_RUN:=pipenv run
+	PIPENV_INSTALL:=pipenv install
+else
+	PIPENV_RUN:=
+	PIPENV_INSTALL:=
+endif
 
 PROJECT := zsh-flutter
 
-PYTHON_VERSION=3.6.5
+PYTHON_VERSION=3.7.3
 PYENV_NAME="${PROJECT}"
 
 # Configuration.
-SHELL := /bin/bash
+SHELL ?=/bin/bash
 ROOT_DIR=$(shell pwd)
 MESSAGE:=🍺️
-MESSAGE_HAPPY:="Done! ${MESSAGE} Now Happy Coding"
+MESSAGE_HAPPY:="Done! ${MESSAGE}, Now Happy Coding"
 SOURCE_DIR=$(ROOT_DIR)/
 REQUIREMENTS_DIR=$(ROOT_DIR)/requirements
 PROVISION_DIR:=$(ROOT_DIR)/provision
 FILE_README:=$(ROOT_DIR)/README.rst
-PATH_DOCKER_COMPOSE:=provision/docker-compose
+PATH_DOCKER_COMPOSE:=docker-compose.yml -f provision/docker-compose
+DOCKER_SERVICE:=app
 
-pipenv_install := pipenv install
-docker-compose:=docker-compose -f docker-compose.yml
+pipenv_install:=pipenv install
+docker-compose:=$(PIPENV_RUN) docker-compose
 
 include provision/make/*.mk
 
@@ -53,14 +65,15 @@ endif
 	@echo
 
 setup: clean
-	@echo "=====> loading packages..."
-	$(pipenv_install) --dev --python ${PYTHON_VERSION}
-	pre-commit install
-	cp -rf .hooks/prepare-commit-msg .git/hooks/
-	@if [ ! -e ".env" ]; then \
+	@echo "=====> install packages..."
+	$(PIPENV_INSTALL) --dev
+	$(PIPENV_RUN) pre-commit install
+	cp -rf provision/git/hooks/prepare-commit-msg .git/hooks/
+	@if [ ! -e ".env" ] && [ -e ".env-sample"]; then \
 		cp -rf .env-sample .env;\
 	fi
+	@echo ${MESSAGE_HAPPY}
 
 environment: clean
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
-	pipenv shell --fancy
+	@pipenv --venv || $(PIPENV_INSTALL) --python ${PYTHON_VERSION}
