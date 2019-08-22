@@ -186,7 +186,7 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 
 .. Dependences:
 
-.. _Python 3.6.5: https://www.python.org/downloads/release/python-365
+.. _Python 3.7.3: https://www.python.org/downloads/release/python-373
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
 
