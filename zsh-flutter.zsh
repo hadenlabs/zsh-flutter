@@ -10,7 +10,7 @@
 
 LIGHT_GREEN='\033[1;32m'
 CLEAR='\033[0m'
-FLUTTER_VERSION="flutter_macos_v1.7.8+hotfix.4-stable.zip"
+FLUTTER_VERSION="flutter_macos_v1.7.8+hotfix.4-stable"
 
 function flutter::install {
     echo -e "${CLEAR}${LIGHT_GREEN}Installing Flutter${CLEAR}"
