@@ -8,6 +8,13 @@ This file uses change log convention from `keep a CHANGELOG`_.
 `Unreleased`_
 +++++++++++++
 
+`0.3.0`_ - 2019-08-23
+++++++++++++++++++++++
+
+- `12 <#12>` - refactor: upgrade settings for project
+- `14 <#14>` - Refactor: change path for sdk flutter
+- `16 <#16>` - fix: path of file
+
 `0.2.1`_ - 2019-06-23
 ++++++++++++++++++++++
 
@@ -28,7 +35,8 @@ This file uses change log convention from `keep a CHANGELOG`_.
 ++++++++++++++++++++++
 
 
-.. _`Unreleased`: https://github.com/luismayta/zsh-flutter/compare/0.2.1...HEAD
+.. _`Unreleased`: https://github.com/luismayta/zsh-flutter/compare/0.3.0...HEAD
+.. _`0.3.0`: https://github.com/luismayta/zsh-flutter/compare/0.2.1...0.3.0
 .. _`0.2.1`: https://github.com/luismayta/zsh-flutter/compare/0.2.0...0.2.1
 .. _`0.2.0`: https://github.com/luismayta/zsh-flutter/compare/0.1.1...0.2.0
 .. _`0.1.1`: https://github.com/luismayta/zsh-flutter/compare/0.1.0...0.1.1
