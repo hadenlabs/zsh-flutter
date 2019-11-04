@@ -10,12 +10,22 @@
 
 LIGHT_GREEN='\033[1;32m'
 CLEAR='\033[0m'
-FLUTTER_VERSION="flutter_macos_v1.10.6"
+
+FLUTTER_VERSION="flutter_macos_v1.9.1+hotfix.6-stable"
+FLUTTER_ROOT="$HOME/google/flutter"
+
+function flutter::purge {
+    # clean path of flutter
+    echo -e "${CLEAR}${LIGHT_GREEN}Clean flutter if exists${CLEAR}"
+    [[ -e "${FLUTTER_ROOT}" ]] && rm -rf "${FLUTTER_ROOT}"
+}
 
 function flutter::install {
+    flutter::purge
     echo -e "${CLEAR}${LIGHT_GREEN}Installing Flutter${CLEAR}"
-    wget -P "$HOME/google" -O flutter.zip https://storage.googleapis.com/flutter_infra/releases/stable/macos/${FLUTTER_VERSION}.zip && unzip -d "$HOME/google" flutter.zip
-
+    local flutter_download
+    flutter_download=https://storage.googleapis.com/flutter_infra/releases/stable/macos/${FLUTTER_VERSION}.zip
+    wget -P "$HOME/google" -O flutter.zip ${flutter_download} && unzip -d "$HOME/google" flutter.zip
 }
 
 function flutter::dependences {
@@ -30,7 +40,7 @@ function flutter::dependences {
 
 
 function flutter::load {
-    [[ -e "$HOME/google/flutter" ]] && export FLUTTER_ROOT="$HOME/google/flutter"
+    [[ -e "$HOME/google/flutter" ]] && export FLUTTER_ROOT="${FLUTTER_ROOT}"
     [[ -e "$HOME/google/flutter/bin" ]] && export PATH="$PATH:$FLUTTER_ROOT/bin"
     [[ -e "$HOME/google/flutter/bin/cache/dart-sdk" ]] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk"
     [[ -e "$HOME/google/flutter/bin/cache/dart-sdk/bin" ]] && export PATH="$PATH:$FLUTTER_DART_SDK/bin"
