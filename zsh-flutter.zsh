@@ -10,7 +10,7 @@
 
 LIGHT_GREEN='\033[1;32m'
 CLEAR='\033[0m'
-FLUTTER_VERSION="flutter_macos_v1.7.8+hotfix.4-stable"
+FLUTTER_VERSION="flutter_macos_v1.10.6"
 
 function flutter::install {
     echo -e "${CLEAR}${LIGHT_GREEN}Installing Flutter${CLEAR}"
@@ -32,13 +32,13 @@ function flutter::dependences {
 function flutter::load {
     [[ -e "$HOME/google/flutter" ]] && export FLUTTER_ROOT="$HOME/google/flutter"
     [[ -e "$HOME/google/flutter/bin" ]] && export PATH="$PATH:$FLUTTER_ROOT/bin"
-    [[ -e "$HOME/google/flutter/bin/cache/dart-sdk/" ]] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk/"
+    [[ -e "$HOME/google/flutter/bin/cache/dart-sdk" ]] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk"
     [[ -e "$HOME/google/flutter/bin/cache/dart-sdk/bin" ]] && export PATH="$PATH:$FLUTTER_DART_SDK/bin"
 }
 
 flutter::load
 
-if (( ! $+commands[flutter] )); then
+if [ ! -x "$(command which flutter)" ]; then
     flutter::install
     flutter::dependences
 fi
