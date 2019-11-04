@@ -1,12 +1,10 @@
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-flutter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-flutter?ref=badge_shield)
-
 zsh-flutter
 ===========
 
 Build
 -----
 
-|Build Status| |GitHub issues| |GitHub license|
+|Fossa Status| |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.3.0
 :Web: https://github.com/luismayta/zsh-flutter
@@ -72,25 +70,19 @@ install this plugin by doing the following:
    running zsh session.
 3. Enjoy!
 
-Contributing
-------------
+Quick Start
+===========
 
-Contributions are welcome! After cloning the repository:
+- Fork this repository
 
-.. code-block:: console
+Usage
+-----
 
-    $ make environment
-    $ make setup
+- Install dependences
 
-Tests are run with ``make``, you can run the baseline environments before submitting a PR:
+.. code-block:: bash
 
-.. code-block:: console
-
-    $ make test
-
-Style checks and formatting are done automatically during commit courtesy of
-`pre-commit <https://pre-commit.com>`_.
-
+  λ make setup
 
 Support
 -------
@@ -165,6 +157,8 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`Website`: http://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
+.. |Fossa Status| image:: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-flutter.svg?type=large
+   :target: https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-flutter?ref=badge_large
 .. |Build Status| image:: https://travis-ci.org/luismayta/zsh-flutter.svg
    :target: https://travis-ci.org/luismayta/zsh-flutter
 .. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-flutter.svg
@@ -186,9 +180,5 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 
 .. Dependences:
 
-.. _Python 3.7.3: https://www.python.org/downloads/release/python-373
+.. _Pyenv: https://github.com/pyenv/pyenv
 .. _Docker: https://www.docker.com/
-.. _Docker Compose: https://docs.docker.com/compose/
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-flutter.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluismayta%2Fzsh-flutter?ref=badge_large)
