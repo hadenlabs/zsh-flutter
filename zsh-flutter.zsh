@@ -17,19 +17,21 @@ source "${plugin_dir}"/src/helpers/messages.zsh
 
 function flutter::purge {
     # clean path of flutter
-    echo -e "${CLEAR}${LIGHT_GREEN}Clean flutter if exists${CLEAR}"
+    message_info "Clean flutter if exists"
     [[ -e "${FLUTTER_ROOT}" ]] && rm -rf "${FLUTTER_ROOT}"
 }
 
 function flutter::install {
     flutter::purge
-    echo -e "${CLEAR}${LIGHT_GREEN}Installing Flutter${CLEAR}"
+    message_info "Installing Flutter"
     local flutter_download
     flutter_download=https://storage.googleapis.com/flutter_infra/releases/stable/macos/${FLUTTER_VERSION}.zip
     wget -P "$HOME/google" -O flutter.zip ${flutter_download} && unzip -d "$HOME/google" flutter.zip
+    message_success "Flutter Installed"
 }
 
 function flutter::dependences {
+    message_info "Installing Dependences for Flutter"
     brew install --HEAD usbmuxd
     brew link usbmuxd
     brew install --HEAD libimobiledevice
@@ -37,6 +39,7 @@ function flutter::dependences {
     brew install cocoapods
     brew install ios-deploy
     pod setup
+    message_success "Flutter Dependences Installed"
 }
 
 
