@@ -8,11 +8,12 @@
 #   Luis Mayta <slovacus@gmail.com>
 #
 
-LIGHT_GREEN='\033[1;32m'
-CLEAR='\033[0m'
-
 FLUTTER_VERSION="flutter_macos_v1.9.1+hotfix.6-stable"
 FLUTTER_ROOT="$HOME/google/flutter"
+
+plugin_dir=$(dirname "${0}":A)
+# shellcheck source=/dev/null
+source "${plugin_dir}"/src/helpers/messages.zsh
 
 function flutter::purge {
     # clean path of flutter
