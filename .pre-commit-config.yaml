@@ -1,6 +1,10 @@
+default_language_version:
+  # force all unspecified python hooks to run python3
+  python: python3.8.0
+
 repos:
 -   repo: https://github.com/pre-commit/pre-commit
-    rev: v1.18.3
+    rev: v1.20.0
     hooks:
     -   id: validate_manifest
 -   repo: https://github.com/detailyang/pre-commit-shell
@@ -34,7 +38,7 @@ repos:
     hooks:
     -   id: do_not_commit
 -   repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.4.3
+    rev: v2.4.4
     hooks:
     -   id: pylint
         exclude: __pycache__|migrations|conf.py|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
@@ -42,14 +46,12 @@ repos:
         - --rcfile=.pylintrc
         - --disable=no-name-in-module,import-error,ungrouped-imports
         - --ignore=settings_test, migrations
-        language_version: python3.8
 -   repo: https://github.com/ambv/black
-    rev: 19.3b0
+    rev: 19.10b0
     hooks:
     -   id: black
-        language_version: python3.8
 -   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.8
+    rev: 3.7.9
     hooks:
     -   id: flake8
 -   repo: https://github.com/pre-commit/mirrors-mypy
@@ -58,15 +60,13 @@ repos:
     -   id: mypy
         args:
         - --ignore-missing-imports
-        language_version: python3.8
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
     -   id: detect-private-key
         files: ^(?!\.?git-crypt)
     -   id: check-merge-conflict
     -   id: trailing-whitespace
-        language_version: python3.8
         files: ^tf|-|\.(py|tfvars|tf|tfenv|env|yml|yaml|pem|key|mock)$
     -   id: end-of-file-fixer
         files: ^tf|-|\.(py|env|yml|yaml|pem|key|mock)$
@@ -78,17 +78,11 @@ repos:
         args:
         - --autofix
     -   id: check-xml
-        language_version: python3.8
     -   id: check-yaml
-        language_version: python3.8
     -   id: check-case-conflict
-        language_version: python3.8
     -   id: check-byte-order-marker
-        language_version: python3.8
     -   id: check-ast
-        language_version: python3.8
     -   id: debug-statements
-        language_version: python3.8
     -   id: check-docstring-first
     -   id: detect-aws-credentials
     -   id: requirements-txt-fixer
@@ -110,7 +104,7 @@ repos:
         additional_dependencies:
         - black
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.19.0
+  rev: v1.21.0
   hooks:
     - id: terraform_fmt
     - id: terraform_docs
