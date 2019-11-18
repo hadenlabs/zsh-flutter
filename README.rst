@@ -4,10 +4,10 @@ zsh-flutter
 |Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.0.0
-:Web: https://github.com/luismayta/zsh-bitwarden
-:Download: https://github.com/luismayta/zsh-bitwarden
-:Source: https://github.com/luismayta/zsh-bitwarden
-:Keywords: zsh-bitwarden
+:Web: https://github.com/luismayta/zsh-flutter
+:Download: https://github.com/luismayta/zsh-flutter
+:Source: https://github.com/luismayta/zsh-flutter
+:Keywords: zsh-flutter
 
 .. contents:: Table of Contents:
     :local:
@@ -154,10 +154,10 @@ Made with :coffee: and :pizza: by `luis mayta`_ and `hadenlabs`_.
 .. _`Website`: http://luismayta.github.io
 .. _`PGP`: https://keybase.io/luismayta/pgp_keys.asc
 
-.. |Build Status| image:: https://travis-ci.org/luismayta/zsh-bitwarden.svg
-   :target: https://travis-ci.org/luismayta/zsh-bitwarden
-.. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-bitwarden.svg
-   :target: https://github.com/luismayta/zsh-bitwarden/issues
+.. |Build Status| image:: https://travis-ci.org/luismayta/zsh-flutter.svg
+   :target: https://travis-ci.org/luismayta/zsh-flutter
+.. |GitHub issues| image:: https://img.shields.io/github/issues/luismayta/zsh-flutter.svg
+   :target: https://github.com/luismayta/zsh-flutter/issues
 .. |GitHub license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
    :target: LICENSE
 
