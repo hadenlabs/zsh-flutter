@@ -20,7 +20,11 @@ Features
 Dependencies
 ------------
 
-List of applications:
+.. code-block:: bash
+
+    https://github.com/mafredri/zsh-async
+    https://github.com/marzocchi/zsh-notify
+    https://github.com/luismayta/zsh-functions
 
 Installation
 ------------
