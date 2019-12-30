@@ -27,23 +27,27 @@ function flutter::install {
 }
 
 function flutter::dependences {
-    message_info "Installing Dependences for Flutter"
-    brew install --HEAD usbmuxd
-    brew link usbmuxd
-    brew install --HEAD libimobiledevice
-    brew install ideviceinstaller
-    brew install cocoapods
-    brew install ios-deploy
-    pod setup
-    message_success "Flutter Dependences Installed"
+    if ! type -p flutter > /dev/null; then
+        message_info "Installing Dependences for Flutter"
+        brew install --HEAD usbmuxd
+        brew link usbmuxd
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller
+        brew install cocoapods
+        brew install ios-deploy
+        pod setup
+        message_success "Flutter Dependences Installed"
+    else
+        message_info "Not Found Brew, please install brew or use luismayta/zsh-brew"
+    fi
 }
 
 
 function flutter::load {
-    [[ -e "$HOME/google/flutter" ]] && export FLUTTER_ROOT="${FLUTTER_ROOT}"
-    [[ -e "$HOME/google/flutter/bin" ]] && export PATH="$PATH:$FLUTTER_ROOT/bin"
-    [[ -e "$HOME/google/flutter/bin/cache/dart-sdk" ]] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk"
-    [[ -e "$HOME/google/flutter/bin/cache/dart-sdk/bin" ]] && export PATH="$PATH:$FLUTTER_DART_SDK/bin"
+    [ -e "${HOME}/google/flutter" ] && export FLUTTER_ROOT="${FLUTTER_ROOT}"
+    path_append "${FLUTTER_ROOT}/bin"
+    [ -e "$HOME/google/flutter/bin/cache/dart-sdk" ] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk"
+    path_append "${FLUTTER_DART_SDK}/bin"
 }
 
 flutter::load
