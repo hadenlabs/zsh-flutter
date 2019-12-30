@@ -18,7 +18,6 @@ function flutter::purge {
 }
 
 function flutter::install {
-    flutter::purge
     message_info "Installing Flutter"
     local flutter_download
     flutter_download=https://storage.googleapis.com/flutter_infra/releases/stable/macos/${FLUTTER_VERSION}.zip
@@ -44,10 +43,10 @@ function flutter::dependences {
 
 
 function flutter::load {
-    [ -e "${HOME}/google/flutter" ] && export FLUTTER_ROOT="${FLUTTER_ROOT}"
+    export PATH="${PATH}:${FLUTTER_ROOT}/bin"
     path_append "${FLUTTER_ROOT}/bin"
-    [ -e "$HOME/google/flutter/bin/cache/dart-sdk" ] && export FLUTTER_DART_SDK="$FLUTTER_ROOT/bin/cache/dart-sdk"
-    path_append "${FLUTTER_DART_SDK}/bin"
+    [ -e "${FLUTTER_ROOT}/bin/cache/dart-sdk" ] && export FLUTTER_DART_SDK="${FLUTTER_ROOT}/bin/cache/dart-sdk"
+    export PATH="${PATH}:${FLUTTER_DART_SDK}/bin"
 }
 
 flutter::load
