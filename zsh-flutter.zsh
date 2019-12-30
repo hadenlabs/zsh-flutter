@@ -9,16 +9,12 @@
 #
 
 FLUTTER_VERSION="flutter_macos_v1.9.1+hotfix.6-stable"
-FLUTTER_ROOT="$HOME/google/flutter"
-
-plugin_dir=$(dirname "${0}":A)
-# shellcheck source=/dev/null
-source "${plugin_dir}"/src/helpers/messages.zsh
+FLUTTER_ROOT="${HOME}/google/flutter"
 
 function flutter::purge {
     # clean path of flutter
     message_info "Clean flutter if exists"
-    [[ -e "${FLUTTER_ROOT}" ]] && rm -rf "${FLUTTER_ROOT}"
+    [ -e "${FLUTTER_ROOT}" ] && rm -rf "${FLUTTER_ROOT}"
 }
 
 function flutter::install {
@@ -26,7 +22,7 @@ function flutter::install {
     message_info "Installing Flutter"
     local flutter_download
     flutter_download=https://storage.googleapis.com/flutter_infra/releases/stable/macos/${FLUTTER_VERSION}.zip
-    wget -P "$HOME/google" -O flutter.zip ${flutter_download} && unzip -d "$HOME/google" flutter.zip
+    wget -P "${HOME}/google" -O flutter.zip ${flutter_download} && unzip -d "${HOME}/google" flutter.zip
     message_success "Flutter Installed"
 }
 
@@ -52,7 +48,7 @@ function flutter::load {
 
 flutter::load
 
-if [ ! -x "$(command which flutter)" ]; then
+if ! type -p flutter > /dev/null; then
     flutter::install
     flutter::dependences
 fi
