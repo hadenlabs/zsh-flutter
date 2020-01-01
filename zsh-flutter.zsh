@@ -7,8 +7,7 @@
 # Authors:
 #   Luis Mayta <slovacus@gmail.com>
 #
-
-FLUTTER_VERSION="flutter_macos_v1.9.1+hotfix.6-stable"
+FLUTTER_VERSION="flutter_macos_v1.12.13+hotfix.5-stable"
 FLUTTER_ROOT="${HOME}/google/flutter"
 
 function flutter::purge {
