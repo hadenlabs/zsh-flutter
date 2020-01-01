@@ -36,6 +36,7 @@ function flutter::install::linux {
 }
 
 function flutter::install::factory {
+    flutter::dependences
     message_info "Installing Flutter"
     case "${OSTYPE}" in
     darwin*)
