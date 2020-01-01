@@ -48,7 +48,25 @@ function flutter::install::factory {
     message_success "Flutter Installed"
 }
 
-function flutter::dependences {
+function flutter::post_install::factory {
+    message_info "Post Installing Flutter"
+    case "${OSTYPE}" in
+    darwin*)
+        flutter::post_install:osx
+        ;;
+    linux*)
+        flutter::post_install::linux
+      ;;
+    esac
+    message_success "Post Installed Installed"
+}
+
+function flutter::post_install::linux {
+    message_info "Installing Dependences for Flutter"
+    message_info "Installed Dependences for Flutter"
+}
+
+function flutter::post_install::osx {
     if ! type -p flutter > /dev/null; then
         message_info "Installing Dependences for Flutter"
         brew install --HEAD usbmuxd
@@ -64,6 +82,30 @@ function flutter::dependences {
     fi
 }
 
+function flutter::dependences {
+    message_info "Validating Dependences for Flutter"
+    if ! type -p curl > /dev/null; then
+        message_warning "Is neccesary get curl"
+    fi
+
+    if ! type -p git > /dev/null; then
+        message_warning "Is neccesary get git"
+    fi
+
+    if ! type -p wget > /dev/null; then
+        message_warning "Is neccesary get wget"
+    fi
+
+    if ! type -p unzip > /dev/null; then
+        message_warning "Is neccesary get unzip"
+    fi
+
+    if ! type -p which > /dev/null; then
+        message_warning "Is neccesary get which"
+    fi
+    message_success "Validated Dependences for Flutter"
+}
+
 function flutter::load {
     export PATH="${PATH}:${FLUTTER_ROOT}/bin"
     path_append "${FLUTTER_ROOT}/bin"
@@ -74,6 +116,6 @@ function flutter::load {
 flutter::load
 
 if ! type -p flutter > /dev/null; then
-    flutter::install
-    flutter::dependences
+    flutter::install::factory
+    flutter::post_install::factory
 fi
