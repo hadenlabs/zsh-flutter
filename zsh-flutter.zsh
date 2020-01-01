@@ -7,7 +7,10 @@
 # Authors:
 #   Luis Mayta <slovacus@gmail.com>
 #
-FLUTTER_VERSION="flutter_macos_v1.12.13+hotfix.5-stable"
+#
+FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra/releases/stable"
+FLUTTER_OSX="/macos/flutter_macos_v1.12.13+hotfix.5-stable.zip"
+FLUTTER_LINUX="/linux/flutter_linux_v1.12.13+hotfix.5-stable.tar.xz"
 FLUTTER_ROOT="${HOME}/google/flutter"
 
 function flutter::purge {
@@ -16,11 +19,32 @@ function flutter::purge {
     [ -e "${FLUTTER_ROOT}" ] && rm -rf "${FLUTTER_ROOT}"
 }
 
-function flutter::install {
+function flutter::install::osx {
     message_info "Installing Flutter"
     local flutter_download
-    flutter_download=https://storage.googleapis.com/flutter_infra/releases/stable/macos/${FLUTTER_VERSION}.zip
+    flutter_download="${FLUTTER_DOWNLOAD_URL}/${FLUTTER_OSX}"
     wget -P "${HOME}/google" -O flutter.zip ${flutter_download} && unzip -d "${HOME}/google" flutter.zip
+    message_success "Flutter Installed"
+}
+
+function flutter::install::linux {
+    message_info "Installing Flutter"
+    local flutter_download
+    flutter_download="${FLUTTER_DOWNLOAD_URL}/${FLUTTER_LINUX}"
+    wget -qO- ${flutter_download} | tar xvz - -C "${HOME}/google"
+    message_success "Flutter Installed"
+}
+
+function flutter::install::factory {
+    message_info "Installing Flutter"
+    case "${OSTYPE}" in
+    darwin*)
+        flutter::install:osx
+        ;;
+    linux*)
+        flutter::install::linux
+      ;;
+    esac
     message_success "Flutter Installed"
 }
 
@@ -39,7 +63,6 @@ function flutter::dependences {
         message_info "Not Found Brew, please install brew or use luismayta/zsh-brew"
     fi
 }
-
 
 function flutter::load {
     export PATH="${PATH}:${FLUTTER_ROOT}/bin"
