@@ -41,7 +41,7 @@ function flutter::install::factory {
     message_info "Installing Flutter"
     case "${OSTYPE}" in
     darwin*)
-        flutter::install:osx
+        flutter::install::osx
         ;;
     linux*)
         flutter::install::linux
@@ -54,7 +54,7 @@ function flutter::post_install::factory {
     message_info "Post Installing Flutter"
     case "${OSTYPE}" in
     darwin*)
-        flutter::post_install:osx
+        flutter::post_install::osx
         ;;
     linux*)
         flutter::post_install::linux
