@@ -1,0 +1,6 @@
+.next
+.serverless
+.serverless_nextjs
+node_modules
+package-lock.json
+dist/
