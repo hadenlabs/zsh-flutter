@@ -1,14 +1,26 @@
 {
-  "name": "zsh-flutter",
+  "keywords": [],
+  "name": "@luismayta/zsh-flutter",
+  "private": true,
   "version": "0.3.0",
-  "description": "nvm for zsh",
+  "description": "yarn for zsh",
   "repository": "ssh://git@github.com/luismayta/zsh-flutter.git",
-  "author": "@slovacus <slovacus@gmail.com>",
+  "author": "Luis Mayta <slovacus@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "semantic-release": "semantic-release",
-    "prettier": "prettier '**/*.{js?(on),ts?(x),scss,md,yml}' --write --list-different",
-    "prettier-check": "yarn prettier -- --write=false"
+    "clean": "rimraf dist .next out build",
+    "clean:all": "yarn clean node_modules",
+    "lint": "eslint -c .eslintrc.js ./ --ext .js,.jsx,.mjs,.d.ts,.ts,.tsx",
+    "lint:fix": "yarn lint --fix",
+    "prettier": "prettier '**/*.{js?(on),ts?(x),jsx,less,scss,md?(x),y(a)ml}' --write=false --list-different",
+    "prettier:fix": "yarn prettier --write=true",
+    "precommit": "lint-staged"
+  },
+  "publishConfig": {
+    "access": "private"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "commitlint": {
     "extends": [
@@ -17,15 +29,29 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn precommit"
     }
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "husky": "^4.2.1",
-    "prettier": "^1.19.1",
-    "semantic-release": "^17.0.2"
+    "@equipindustry/eslint-config": "^0.3.4",
+    "@equipindustry/prettierrc": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^5.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.1",
+    "prettier": "^2.0.5",
+    "prettier-tslint": "^0.4.2",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.0.7",
+    "typescript": "^3.8.3"
   },
   "dependencies": {}
 }
