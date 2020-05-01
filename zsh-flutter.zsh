@@ -70,6 +70,11 @@ function flutter::post_install::linux {
 }
 
 function flutter::post_install::osx {
+    if ! type -p brew > /dev/null; then
+        message_info "Not Found Brew, please install brew or use luismayta/zsh-brew"
+        return
+    fi
+
     if ! type -p flutter > /dev/null; then
         message_info "Installing Dependences for Flutter"
         brew install --HEAD usbmuxd
@@ -80,8 +85,6 @@ function flutter::post_install::osx {
         brew install ios-deploy
         pod setup
         message_success "Flutter Dependences Installed"
-    else
-        message_info "Not Found Brew, please install brew or use luismayta/zsh-brew"
     fi
 }
 
@@ -110,10 +113,9 @@ function flutter::dependences {
 }
 
 function flutter::load {
-    export PATH="${PATH}:${FLUTTER_ROOT}/bin"
-    path_append "${FLUTTER_ROOT}/bin"
+    [ -e "${FLUTTER_ROOT}/bin" ] && export PATH="${PATH}:${FLUTTER_ROOT}/bin"
     [ -e "${FLUTTER_ROOT}/bin/cache/dart-sdk" ] && export FLUTTER_DART_SDK="${FLUTTER_ROOT}/bin/cache/dart-sdk"
-    export PATH="${PATH}:${FLUTTER_DART_SDK}/bin"
+    [ -e "${FLUTTER_DART_SDK}/bin" ] && export PATH="${PATH}:${FLUTTER_DART_SDK}/bin"
 }
 
 flutter::load
