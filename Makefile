@@ -21,7 +21,6 @@ TEAM := private
 REPOSITORY_DOMAIN:=github.com
 REPOSITORY_OWNER:=luismayta
 AWS_VAULT ?= luismayta
-KEYBASE_OWNER ?= luismayta
 PROJECT := zsh-flutter
 PROJECT_PORT := 3000
 
@@ -38,8 +37,6 @@ MESSAGE_HAPPY:="Done! ${MESSAGE}, Now Happy Hacking"
 SOURCE_DIR=$(ROOT_DIR)/
 PROVISION_DIR:=$(ROOT_DIR)/provision
 FILE_README:=$(ROOT_DIR)/README.rst
-KEYBASE_VOLUME_PATH ?= /Keybase
-KEYBASE_PATH ?= ${KEYBASE_VOLUME_PATH}/${TEAM}/${KEYBASE_OWNER}/${REPOSITORY_DOMAIN}/${REPOSITORY_OWNER}/${PROJECT}
 
 PATH_DOCKER_COMPOSE:=docker-compose.yml -f provision/docker-compose
 
@@ -68,8 +65,6 @@ help:
 	@make docker.help
 	@make docs.help
 	@make test.help
-	@make keybase.help
-	@make utils.help
 
 setup:
 	@echo "=====> install packages..."
@@ -85,6 +80,5 @@ setup:
 environment:
 	@echo "=====> loading virtualenv ${PYENV_NAME}..."
 	pyenv local ${PYTHON_VERSION}
-	make keybase.setup
 	@pipenv --venv || $(PIPENV_INSTALL) --python=${PYTHON_VERSION} --skip-lock
 	@echo ${MESSAGE_HAPPY}
