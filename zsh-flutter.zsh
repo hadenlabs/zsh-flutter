@@ -10,7 +10,7 @@
 #
 FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra/releases/stable"
 
-FLUTTER_VERSION="v1.12.13+hotfix.9-stable"
+FLUTTER_VERSION="1.17.5-stable"
 FLUTTER_OSX="macos/flutter_macos_${FLUTTER_VERSION}.zip"
 FLUTTER_LINUX="linux/flutter_linux_${FLUTTER_VERSION}.tar.xz"
 FLUTTER_ROOT="${HOME}/google/flutter"
