@@ -14,6 +14,7 @@ FLUTTER_VERSION="1.17.5-stable"
 FLUTTER_OSX="macos/flutter_macos_${FLUTTER_VERSION}.zip"
 FLUTTER_LINUX="linux/flutter_linux_${FLUTTER_VERSION}.tar.xz"
 FLUTTER_ROOT="${HOME}/google/flutter"
+FLUTTER_PUB_CACHE_BIN="${HOME}/.pub-cache/bin"
 
 function flutter::purge {
     # clean path of flutter
@@ -116,6 +117,7 @@ function flutter::load {
     [ -e "${FLUTTER_ROOT}/bin" ] && export PATH="${PATH}:${FLUTTER_ROOT}/bin"
     [ -e "${FLUTTER_ROOT}/bin/cache/dart-sdk" ] && export FLUTTER_DART_SDK="${FLUTTER_ROOT}/bin/cache/dart-sdk"
     [ -e "${FLUTTER_DART_SDK}/bin" ] && export PATH="${PATH}:${FLUTTER_DART_SDK}/bin"
+    [ -e "${FLUTTER_PUB_CACHE_BIN}" ] && export PATH="${FLUTTER_PUB_CACHE_BIN}"
 }
 
 flutter::load
