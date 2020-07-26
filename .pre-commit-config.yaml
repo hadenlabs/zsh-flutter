@@ -1,3 +1,4 @@
+exclude: 'docs|.serverless|.serveless_nextjs|node_modules|migrations|.git|.tox|.gen'
 default_language_version:
   # force all unspecified python hooks to run python3
   python: python3.8.0
@@ -52,6 +53,7 @@ repos:
       - id: mypy
         args:
           - --ignore-missing-imports
+        exclude: migrations|conf.py|_build|.tox|pootle/static|pootle/translations|pootle/locale|pootle/assets|templates
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.1.0
     hooks:
