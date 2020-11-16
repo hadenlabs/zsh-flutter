@@ -6,7 +6,7 @@ If you have any problems with starting zsh-flutter, please report it on GitHub: 
 
 
 Who is behind zsh-flutter
-----------------------
+-------------------------
 
 **Organisation**:
 
