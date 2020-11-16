@@ -9,7 +9,7 @@
 #
 #
 
-export FLUTTER_VERSION="1.17.5-stable"
+export FLUTTER_VERSION="1.22.4"
 FLUTTER_SRC_PATH=$(dirname "$0")
 
 # shellcheck source=/dev/null
