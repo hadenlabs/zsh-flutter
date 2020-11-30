@@ -7,11 +7,11 @@ function flutter::install {
     message_info "Installing Flutter"
     local flutter_download
     flutter_download="${FLUTTER_DOWNLOAD_URL}/${FLUTTER_FILE}"
-    wget -P "${HOME}/google" -O flutter.zip "${flutter_download}" && unzip -d "${HOME}/google" flutter.zip
+    wget -P "${HOME}/google" -O flutter.zip "${flutter_download}" && unzip -d "${HOME}/google" flutter.zip || return
     message_success "Flutter Installed"
 }
 
-function flutter::post_install {
+function flutter::install::after {
     if type -p flutter > /dev/null; then
         return
     fi
