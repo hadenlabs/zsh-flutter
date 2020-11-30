@@ -21,3 +21,7 @@ function flutter::main::factory {
 flutter::main::factory
 
 flutter::dependences
+
+flutter::install
+
+flutter::install::after

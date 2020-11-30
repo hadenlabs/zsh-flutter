@@ -4,7 +4,7 @@
 export FLUTTER_ROOT="${HOME}/google/flutter"
 export FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra/releases/stable"
 
-function flutter::post_install {
+function flutter::install::after {
     message_info "Installing Dependences for Flutter"
     message_info "Installed Dependences for Flutter"
 }
@@ -19,7 +19,7 @@ function flutter::dependences {
     if type -p flutter > /dev/null; then
         return
     fi
-    message_info "Validating Dependences for Flutter"
+
     if ! type -p curl > /dev/null; then
         message_warning "Is neccesary get curl"
     fi
@@ -39,5 +39,4 @@ function flutter::dependences {
     if ! type -p which > /dev/null; then
         message_warning "Is neccesary get which"
     fi
-    message_success "Validated Dependences for Flutter"
 }
