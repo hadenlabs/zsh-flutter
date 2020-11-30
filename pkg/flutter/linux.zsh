@@ -7,6 +7,6 @@ function flutter::install {
     message_info "Installing Flutter"
     local flutter_download
     flutter_download="${FLUTTER_DOWNLOAD_URL}/${FLUTTER_FILE}"
-    wget -qO- "${flutter_download}" | tar xvz - -C "${HOME}/google"
+    wget -qO- "${flutter_download}" | tar xvz - -C "${HOME}/google" || return
     message_success "Flutter Installed"
 }
