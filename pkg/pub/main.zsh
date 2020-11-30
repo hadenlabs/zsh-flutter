@@ -23,3 +23,5 @@ function pub::main::factory {
 pub::main::factory
 
 pub::dependences
+
+pub::load
