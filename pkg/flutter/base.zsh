@@ -1,18 +1,16 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-export FLUTTER_ROOT="${HOME}/google/flutter"
-export FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra/releases/stable"
-
-function flutter::install::after {
-    message_info "Installing Dependences for Flutter"
-    message_info "Installed Dependences for Flutter"
+function flutter::install {
+    flutter::internal::flutter::install
 }
 
 function flutter::load {
-    [ -e "${FLUTTER_ROOT}/bin" ] && export PATH="${PATH}:${FLUTTER_ROOT}/bin"
-    [ -e "${FLUTTER_ROOT}/bin/cache/dart-sdk" ] && export FLUTTER_DART_SDK="${FLUTTER_ROOT}/bin/cache/dart-sdk"
-    [ -e "${FLUTTER_DART_SDK}/bin" ] && export PATH="${PATH}:${FLUTTER_DART_SDK}/bin"
+    flutter::internal::flutter::load
+}
+
+function flutter::install::post_install {
+    flutter::internal::flutter::post_install
 }
 
 function flutter::dependences {

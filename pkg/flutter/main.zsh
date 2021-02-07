@@ -3,25 +3,20 @@
 
 function flutter::main::factory {
     # shellcheck source=/dev/null
-    source "${FLUTTER_SRC_PATH}"/pkg/flutter/base.zsh
+    source "${ZSH_FLUTTER_PATH}"/pkg/flutter/base.zsh
     case "${OSTYPE}" in
     darwin*)
         # shellcheck source=/dev/null
-        source "${FLUTTER_SRC_PATH}"/pkg/flutter/osx.zsh
+        source "${ZSH_FLUTTER_PATH}"/pkg/flutter/osx.zsh
         ;;
     linux*)
         # shellcheck source=/dev/null
-        source "${FLUTTER_SRC_PATH}"/pkg/flutter/linux.zsh
+        source "${ZSH_FLUTTER_PATH}"/pkg/flutter/linux.zsh
       ;;
     esac
     # shellcheck source=/dev/null
-    source "${FLUTTER_SRC_PATH}"/pkg/flutter/helper.zsh
+    source "${ZSH_FLUTTER_PATH}"/pkg/flutter/helper.zsh
 }
 
 flutter::main::factory
-
-flutter::dependences
-
-flutter::install
-
-flutter::install::after
+flutter::load
