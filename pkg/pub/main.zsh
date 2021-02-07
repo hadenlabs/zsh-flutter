@@ -3,25 +3,23 @@
 
 function pub::main::factory {
     # shellcheck source=/dev/null
-    source "${FLUTTER_SRC_PATH}"/pkg/pub/base.zsh
+    source "${ZSH_FLUTTER_PATH}"/pkg/pub/base.zsh
 
     case "${OSTYPE}" in
     darwin*)
         # shellcheck source=/dev/null
-        source "${FLUTTER_SRC_PATH}"/pkg/pub/osx.zsh
+        source "${ZSH_FLUTTER_PATH}"/pkg/pub/osx.zsh
         ;;
     linux*)
         # shellcheck source=/dev/null
-        source "${FLUTTER_SRC_PATH}"/pkg/pub/linux.zsh
+        source "${ZSH_FLUTTER_PATH}"/pkg/pub/linux.zsh
       ;;
     esac
 
     # shellcheck source=/dev/null
-    source "${FLUTTER_SRC_PATH}"/pkg/pub/helper.zsh
+    source "${ZSH_FLUTTER_PATH}"/pkg/pub/helper.zsh
 }
 
 pub::main::factory
-
-pub::dependences
-
 pub::load
+

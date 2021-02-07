@@ -9,12 +9,14 @@
 #
 #
 
-export FLUTTER_VERSION="1.22.4-stable"
-FLUTTER_SRC_PATH=$(dirname "$0")
-ZSH_PACKAGE_NAME="Flutter"
+# shellcheck disable=SC2034  # Unused variables left for readability
+ZSH_FLUTTER_PATH=$(dirname "${0}")
 
 # shellcheck source=/dev/null
-source "${FLUTTER_SRC_PATH}"/pkg/flutter/main.zsh
+source "${ZSH_FLUTTER_PATH}"/config/main.zsh
 
 # shellcheck source=/dev/null
-source "${FLUTTER_SRC_PATH}"/pkg/pub/main.zsh
+source "${ZSH_FLUTTER_PATH}"/internal/main.zsh
+
+# shellcheck source=/dev/null
+source "${ZSH_FLUTTER_PATH}"/pkg/main.zsh

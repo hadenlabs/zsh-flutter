@@ -1,8 +1,6 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-export PUB_BIN_PATH="${HOME}/.pub-cache/bin"
-
 function pub::post_install {
     message_info "Installing Dependences for Pub"
     message_info "Installed Dependences for Pub"
