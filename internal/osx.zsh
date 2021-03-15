@@ -24,7 +24,6 @@ function flutter::internal::flutter::post_install {
     [ ! "$(core::exists java)" ] && brew install --cask homebrew/cask-versions/adoptopenjdk8
     sdkmanager --update
     yes | sdkmanager "platform-tools"
-    # yes | sdkmanager "platforms;android-29"
     yes | sdkmanager "build-tools;29.0.3"
     flutter config --android-sdk "${ANDROID_SDK_ROOT}"
     yes | flutter doctor --android-licenses
