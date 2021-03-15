@@ -32,5 +32,5 @@ function flutter::internal::packages::install {
 }
 
 function flutter::internal::flutter::upgrade {
-    message_warning "method not implemente"
+    message_warning "method not implement"
 }
