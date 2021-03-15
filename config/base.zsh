@@ -10,6 +10,8 @@ export FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra/releas
 export FLUTTER_VERSION="2.0.2-stable"
 export FLUTTER_MESSAGE_BREW="Please install brew or use antibody bundle hadenlabs/zsh-brew branch:develop"
 export FLUTTER_PACKAGE_NAME=flutter
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_FILE_REPOSITORIES="${HOME}/.android/repositories.cfg"
 export FLUTTER_PACKAGES=(
 )
 
