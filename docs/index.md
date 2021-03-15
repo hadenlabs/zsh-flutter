@@ -1,1 +1,1 @@
-# Welcome to hadenlabs/zsh-flutter documentation
+# Welcome to zsh-flutter documentation
