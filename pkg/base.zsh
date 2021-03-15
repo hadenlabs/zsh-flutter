@@ -22,7 +22,3 @@ function flutter::post_install {
 function flutter::upgrade {
     flutter::internal::flutter::upgrade
 }
-
-function flutter::package::all::install {
-    flutter::internal::packages::install
-}

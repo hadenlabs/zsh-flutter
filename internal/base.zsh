@@ -16,7 +16,7 @@ function flutter::internal::flutter::load {
 
 function flutter::internal::curl::install {
     message_info "Installing curl for ${FLUTTER_PACKAGE_NAME}"
-    if ! type -p brew > /dev/null; then
+    if ! core::exists brew; then
         message_warning "${FLUTTER_MESSAGE_BREW}"
     fi
     brew install curl
