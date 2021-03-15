@@ -1,4 +1,4 @@
-site_name: hadenlabs/zsh-flutter Documentation
+site_name: zsh-flutter Documentation
 theme: 'material'
 markdown_extensions:
   - toc:
@@ -17,7 +17,7 @@ extra:
 
 repo_name: 'hadenlabs/zsh-flutter'
 repo_url: 'https://github.com/hadenlabs/zsh-flutter'
-copyright: 'Copyright © 2020 <a href="https://hadenlabs.com">hadenlabs</a>'
+copyright: 'Copyright © 2021 <a href="https://hadenlabs.com">hadenlabs</a>'
 
 google_analytics:
   - ''

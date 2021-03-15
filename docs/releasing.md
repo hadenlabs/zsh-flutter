@@ -2,7 +2,7 @@
 
 ## Bump a new version
 
-Make a new version of hadenlabs/zsh-flutter in the following steps:
+Make a new version of zsh-flutter in the following steps:
 
 - Make sure everything is commit to github.com.
 - Update `CHANGELOG.md` with the next version.
