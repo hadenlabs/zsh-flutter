@@ -1,6 +1,6 @@
 # How To Contribute
 
-Contributions to hadenlabs/zsh-flutter are welcome.
+Contributions to zsh-flutter are welcome.
 
 ## Getting Started
 
