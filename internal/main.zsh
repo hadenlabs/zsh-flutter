@@ -20,5 +20,5 @@ flutter::internal::main::factory
 
 flutter::internal::flutter::load
 
-if ! type -p curl > /dev/null; then flutter::internal::curl::install; fi
-if ! type -p flutter > /dev/null; then flutter::internal::flutter::install; fi
+if ! core::exists curl; then flutter::internal::curl::install; fi
+if ! core::exists flutter; then flutter::internal::flutter::install; fi

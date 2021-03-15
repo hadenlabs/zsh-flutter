@@ -14,27 +14,23 @@ function flutter::install::post_install {
 }
 
 function flutter::dependences {
-    if type -p flutter > /dev/null; then
+    if core::exists flutter; then
         return
     fi
 
-    if ! type -p curl > /dev/null; then
+    if ! core::exists curl; then
         message_warning "Is neccesary get curl"
     fi
 
-    if ! type -p git > /dev/null; then
+    if ! core::exists git; then
         message_warning "Is neccesary get git"
     fi
 
-    if ! type -p wget > /dev/null; then
+    if ! core::exists wget; then
         message_warning "Is neccesary get wget"
     fi
 
-    if ! type -p unzip > /dev/null; then
+    if ! core::exists unzip; then
         message_warning "Is neccesary get unzip"
-    fi
-
-    if ! type -p which > /dev/null; then
-        message_warning "Is neccesary get which"
     fi
 }
