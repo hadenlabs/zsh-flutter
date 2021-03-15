@@ -9,7 +9,7 @@ function flutter::load {
     flutter::internal::flutter::load
 }
 
-function flutter::install::post_install {
+function flutter::post_install {
     flutter::internal::flutter::post_install
 }
 
