@@ -11,7 +11,7 @@ function pub::load {
 }
 
 function pub::dependences {
-    if type -p pub > /dev/null; then
+    if core::exists pub; then
         return
     fi
     message_info "Validating Dependences for Pub"

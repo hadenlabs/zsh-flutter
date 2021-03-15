@@ -22,4 +22,3 @@ function pub::main::factory {
 
 pub::main::factory
 pub::load
-
