@@ -1,11 +1,7 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-function flutter::internal::install::post_install {
-    if core::exists flutter; then
-        return
-    fi
-
+function flutter::internal::flutter::post_install {
     if ! core::exists brew; then
         message_info "${FLUTTER_MESSAGE_BREW}"
         return
