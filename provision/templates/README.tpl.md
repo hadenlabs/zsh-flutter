@@ -21,14 +21,6 @@
 
 {{ if has (ds "config") "description" }} {{(ds "config").description }} {{ end }}
 
-{{ if has (ds "config") "license" }}
-
-## :page_facing_up: License
-
-{{ (ds "config").name }} is an open-sourced software licensed under the [{{(ds "config").license }} license](LICENSE.md).
-
-{{ end }}
-
 
 {{ if has (ds "config") "screenshots" }}
 
@@ -39,20 +31,20 @@
 {{ end }}{{ end }}
 
 {{ if has (ds "config") "features" }}
-## :sparkles: Features
+## Features
 {{ range $feature := (ds "config").features }}{{printf "- %s\n" $feature}}{{ end }}
 {{ end }}
 
 {{ if has (ds "config") "introduction" }}
 
-## :page_facing_up: Introduction
+## Introduction
 
 {{ (ds "config").introduction -}} {{ end }}
 
 
 {{ if has (ds "config") "todo" }}
 
-## :page_facing_up: TODO
+## To-do
 
 {{ range $todo := (ds "config").todo }}
 {{ printf "* [%s](%s)" $todo.name $todo.url }}
@@ -82,13 +74,13 @@
 
 {{ if has (ds "config") "quickstart" -}}
 
-## :bulb: Quick Start
+## Quick Start
 
 {{ (ds "config").quickstart -}} {{ end }}
 
 {{ if has (ds "config") "examples" }}
 
-## :page_facing_up: Examples
+## Examples
 
 {{ range $file := (datasource "config").examples -}}
 {{ (include "includes" $file) }}
@@ -110,7 +102,7 @@ Check out these related projects.
 
 {{ if has (ds "config") "references" }}
 
-## :blue_book: References
+## References
 
 For additional context, refer to some of these links.
 {{ range $reference := (ds "config").references }}
@@ -122,7 +114,7 @@ For additional context, refer to some of these links.
 
 **Got a question?**
 
-File a GitHub [issue]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}}), send us an [email](email) or join our [Slack Community](slack).
+File a GitHub [issue]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}}).
 
 ## Contributing
 
@@ -130,7 +122,7 @@ File a GitHub [issue]({{ printf "https://github.com/%s/issues" (ds "config").git
 
 Please use the [issue tracker]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}}) to report any bugs or file feature requests.
 
-### Developing
+### Development
 
 In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
@@ -142,15 +134,30 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
-#### Versioning
+## Module Versioning
 
-Releases are managed using github release feature. We use [Semantic Versioning](http://semver.org) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+This Module follows the principles of [Semantic Versioning (SemVer)](https://semver.org/).
+
+Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following constructs:
+
+1. Use the `MAJOR` version for incompatible changes.
+1. Use the `MINOR` version when adding functionality in a backwards compatible manner.
+1. Use the `PATCH` version when introducing backwards compatible bug fixes.
+
+### Backwards compatibility in `0.0.z` and `0.y.z` version
+
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is
+  increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
+  increased. (Pre-release)
+
 
 {{ if has (ds "config") "copyrights" }}
 
 ## Copyrights
 
 {{ range $copyright := (ds "config").copyrights -}} {{ printf "Copyright © %s-%d [%s](%s)\n" $copyright.year time.Now.Year $copyright.name $copyright.url }} {{ end }}
+
 {{ else }}
 
 ## Copyright
@@ -182,6 +189,15 @@ All other trademarks referenced herein are the property of their respective owne
 {{ printf "  [%s_avatar]: https://github.com/%s.png?size=150" $contributor.github $contributor.github }}
 {{- end }}
 {{ end }}
+
+{{ end }}
+
+
+{{ if has (ds "config") "license" }}
+
+## License
+
+The code and styles are licensed under the {{(ds "config").license }} license [See project license.](LICENSE).
 
 {{ end }}
 
