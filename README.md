@@ -12,26 +12,35 @@
 
   -->
 
+ 
+
 # zsh-flutter
+ [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/zsh-flutter.svg?label=latest&sort=semver)](https://github.com/hadenlabs/zsh-flutter/releases) [![Lint](https://github.com/hadenlabs/zsh-flutter/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/zsh-flutter/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-flutter.svg)](https://github.com/hadenlabs/zsh-flutter/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-flutter.svg)](https://github.com/hadenlabs/zsh-flutter/releases)
 
-[![Lint](https://github.com/hadenlabs/zsh-flutter/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/zsh-flutter/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-flutter.svg)](https://github.com/hadenlabs/zsh-flutter/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-flutter.svg)](https://github.com/hadenlabs/zsh-flutter/releases)
+ zsh-flutter plugin for zsh. 
 
-zsh-flutter plugin for zsh.
 
-## :page_facing_up: License
 
-zsh-flutter is an open-sourced software licensed under the [MIT license](LICENSE.md).
+
+
+
+
+
+
+
+
+
 
 ## Requirements
 
+
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-```{bash}
-https://github.com/luismayta/zsh-core
-```
+* [zsh-core](https://github.com/hadenlabs/zsh-core)
+
+
 
 ## Installation
-
 ### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) users
 
 If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install this plugin by doing the following:
@@ -40,18 +49,16 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 2.  Clone the plugin `bash git clone https://github.com/hadenlabs/zsh-flutter`bash
 3.  Edit your `.zshrc` and add `plugins=( ... hadenlabs/zsh-flutter )` to your list of plugins
 4.  Open a new terminal and enjoy!
-
 ### [antigen](https://github.com/zsh-users/antigen) users
 
-If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this plugin by doing the following:
+If you're using [Antigen](https://github.com/zsh-users/antigen), install this plugin by doing the following:
 
 1.  Add `antigen bundle hadenlabs/zsh-flutter` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle hadenlabs/zsh-flutter` in a running zsh session.
 3.  Enjoy!
-
 ### [antibody](https://github.com/getantibody/antibody) users
 
-If you're using [Antigen](https://github.com/getantibody/antibody), install this plugin by doing the following:
+If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
 1.  Add :
 
@@ -64,7 +71,15 @@ to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-flutter` in a running zsh session.
 3.  Enjoy!
 
-## Functions
+
+
+
+
+
+
+
+
+ ## Functions
 
 zsh flutter includes a small utility `flutter` to fetch and install new packages.
 
@@ -80,11 +95,16 @@ Load path flutter.
 
 Install dependences of flutter.
 
+
+
+
+
+
 ## Help
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/hadenlabs/zsh-flutter/issues), send us an [email](email) or join our [Slack Community](slack).
+File a GitHub [issue](https://github.com/hadenlabs/zsh-flutter/issues).
 
 ## Contributing
 
@@ -92,7 +112,7 @@ File a GitHub [issue](https://github.com/hadenlabs/zsh-flutter/issues), send us 
 
 Please use the [issue tracker](https://github.com/hadenlabs/zsh-flutter/issues) to report any bugs or file feature requests.
 
-### Developing
+### Development
 
 In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
@@ -104,17 +124,46 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
-#### Versioning
+## Module Versioning
 
-Releases are managed using github release feature. We use [Semantic Versioning](http://semver.org) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+This Module follows the principles of [Semantic Versioning (SemVer)](https://semver.org/).
+
+Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following constructs:
+
+1. Use the `MAJOR` version for incompatible changes.
+1. Use the `MINOR` version when adding functionality in a backwards compatible manner.
+1. Use the `PATCH` version when introducing backwards compatible bug fixes.
+
+### Backwards compatibility in `0.0.z` and `0.y.z` version
+
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is
+  increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is
+  increased. (Pre-release)
+
+
+
 
 ## Copyright
 
 Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
+
+
+
+
+
+
+## License
+
+The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
+
+
 
 ## Don't forget to 🌟 Star 🌟 the repo if you like zsh-flutter
 
