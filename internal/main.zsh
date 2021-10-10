@@ -20,5 +20,6 @@ flutter::internal::main::factory
 
 flutter::internal::flutter::load
 
-if ! core::exists curl; then flutter::internal::curl::install; fi
+if ! core::exists curl; then core::install curl; fi
+if ! core::exists wget; then core::install wget; fi
 if ! core::exists flutter; then flutter::internal::flutter::install; fi
