@@ -14,15 +14,6 @@ function flutter::internal::flutter::load {
     [ -e "${FLUTTER_DART_SDK_BIN}" ] && export PATH="${PATH}:${FLUTTER_DART_SDK_BIN}"
 }
 
-function flutter::internal::curl::install {
-    message_info "Installing curl for ${FLUTTER_PACKAGE_NAME}"
-    if ! core::exists brew; then
-        message_warning "${FLUTTER_MESSAGE_BREW}"
-    fi
-    brew install curl
-    message_success "Installed curl for ${FLUTTER_PACKAGE_NAME}"
-}
-
 function flutter::internal::flutter::upgrade {
     message_warning "method not implement"
 }
