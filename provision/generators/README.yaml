@@ -10,6 +10,10 @@ name: zsh-flutter
 email:
   support: support@hadenlabs.com
 
+confluence:
+  space: ZSH-FLUTTER
+  title: readme
+
 # Logo for this project
 #logo: docs/logo.png
 
@@ -21,28 +25,31 @@ github_repo: hadenlabs/zsh-flutter
 
 # Badges to display
 badges:
-  - name: GitHub tag (latest SemVer)
-    image: https://img.shields.io/github/v/tag/hadenlabs/zsh-flutter.svg?label=latest&sort=semver
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-flutter
     url: https://github.com/hadenlabs/zsh-flutter/releases
   - name: Lint
-    image: https://github.com/hadenlabs/zsh-flutter/actions/workflows/lint.yml/badge.svg?branch=develop
-    url: https://github.com/hadenlabs/zsh-flutter/actions
-  - name: Issues
-    image: https://img.shields.io/github/issues/hadenlabs/zsh-flutter.svg
-    url: https://github.com/hadenlabs/zsh-flutter/issues
-  - name: Latest Release
-    image: https://img.shields.io/github/release/hadenlabs/zsh-flutter.svg
-    url: https://github.com/hadenlabs/zsh-flutter/releases
-
-# Short description of this project
-description: |-
-  zsh-flutter plugin for zsh.
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-flutter/lint-code
+    url: https://github.com/hadenlabs/zsh-flutter/actions?workflow=lint-code
+  - name: pre-commit
+    image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+    url: https://github.com/pre-commit/pre-commit
+  - name: Conventional Commits
+    image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
+    url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735
+    url: https://keepachangelog.com
 
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
   * [zsh-core](https://github.com/hadenlabs/zsh-core)
+
+# Short description of this project
+description: |-
+  zsh-flutter plugin for zsh.
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
