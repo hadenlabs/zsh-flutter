@@ -1,0 +1,35 @@
+version: '3'
+
+tasks:
+  check:
+    desc: Exist docker and dependences
+    run: once
+    deps:
+      - task: check:docker
+
+  check:docker:
+    desc: Exist docker
+    run: once
+    preconditions:
+      - sh: command -v docker
+        msg: 'Please Install docker'
+
+  build:
+    desc: Build Image.
+    run: once
+    cmds:
+      - >-
+        docker buildx build --platform={{.DOCKER_PLATFORMS}}
+        --file Dockerfile
+        --tag {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME}}:{{.APP_TAG}} .
+        --build-arg VERSION={{.APP_TAG}}
+    deps:
+      - task: check:docker
+
+  publish:
+    desc: Publish Image.
+    run: once
+    deps:
+      - build
+    cmds:
+      - docker push {{.DOCKER_ORGANIZATION}}/{{.IMAGE_NAME}}:{{.APP_TAG}}
