@@ -11,7 +11,7 @@ email:
   support: support@hadenlabs.com
 
 confluence:
-  space: ZSH-FLUTTER
+  space: ZshFlutter
   title: readme
 
 # Logo for this project
