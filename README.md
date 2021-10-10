@@ -1,4 +1,4 @@
- <!-- Space: ZSH-FLUTTER -->
+ <!-- Space: ZshFlutter -->
 <!-- Title: readme -->
 
 <!--
@@ -15,7 +15,7 @@
 
   -->
 
- <!-- Space: ZSH-FLUTTER -->
+ <!-- Space: ZshFlutter -->
 
  <!-- Title: readme -->
 
