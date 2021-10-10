@@ -1,4 +1,4 @@
-<!-- Space: ZSH-FLUTTER -->
+<!-- Space: ZshFlutter -->
 <!-- Title: Authors -->
 
 # Authors
