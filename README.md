@@ -15,10 +15,6 @@
 
   -->
 
- <!-- Space: ZshFlutter -->
-
- <!-- Title: readme -->
-
 [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-flutter)](https://github.com/hadenlabs/zsh-flutter/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-flutter/lint-code)](https://github.com/hadenlabs/zsh-flutter/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
 
 # zsh-flutter
@@ -33,6 +29,17 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 
 ## Installation
 
+<!-- Space: ZshFlutter -->
+<!-- Parent: Project -->
+<!-- Title: Project Installation Oh-My-Zsh -->
+
+<!-- Label: ZshFlutter -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Label: Oh-My-Zsh -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ### [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) users
 
 If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install this plugin by doing the following:
@@ -41,6 +48,16 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 2.  Clone the plugin `bash git clone https://github.com/hadenlabs/zsh-flutter`bash
 3.  Edit your `.zshrc` and add `plugins=( ... hadenlabs/zsh-flutter )` to your list of plugins
 4.  Open a new terminal and enjoy!
+    <!-- Space: ZshFlutter -->
+    <!-- Parent: Project -->
+    <!-- Title: Project Installation Antigen -->
+
+<!-- Label: ZshFlutter -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Label: Antigen -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
 
 ### [antigen](https://github.com/zsh-users/antigen) users
 
@@ -49,6 +66,15 @@ If you're using [Antigen](https://github.com/zsh-users/antigen), install this pl
 1.  Add `antigen bundle hadenlabs/zsh-flutter` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle hadenlabs/zsh-flutter` in a running zsh session.
 3.  Enjoy!
+    <!-- Space: ZshFlutter -->
+    <!-- Parent: Project -->
+    <!-- Title: Project Installation Antibody -->
+
+<!-- Label: ZshFlutter -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
 
 ### [antibody](https://github.com/getantibody/antibody) users
 
@@ -65,21 +91,15 @@ to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-flutter` in a running zsh session.
 3.  Enjoy!
 
+ <!-- Space: ZshFlutter -->
+<!-- Parent: Project -->
+<!-- Title: Functions -->
+
+<!-- Label: Functions -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ## Functions
-
-zsh flutter includes a small utility `flutter` to fetch and install new packages.
-
-#### `flutter::install`
-
-Install flutter.
-
-#### `flutter::load`
-
-Load path flutter.
-
-#### `flutter::post_install`
-
-Install dependences of flutter.
 
 ## Help
 

@@ -147,6 +147,12 @@ dist
 # Serverless Webpack directories
 .webpack/
 
+# Optional stylelint cache
+.stylelintcache
+
+# SvelteKit build / generate output
+.svelte-kit
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
