@@ -2,7 +2,7 @@ version: '3'
 
 env:
   GO_FILES:
-    sh: find ./ -type f -name '*.go' | grep -v '/vendor/' | sort -u
+    sh: find ./ -type f -name '*.go' | grep -v '/vendor/' | sort -u | xargs
 
 tasks:
   check:
@@ -57,7 +57,7 @@ tasks:
     desc: Setup go dependences.
     run: once
     cmds:
-      - gofmt -s -l -w $(GO_FILES)
+      - gofmt -s -l -w {{.GO_FILES}}
     deps:
       - task: check:gofmt
 
