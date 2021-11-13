@@ -11,6 +11,7 @@ repos:
           (?x)^(
             .+\.vendor\/.*$|
             .+\.node_modules\/.*$|
+            .+\wordlist.txt$|
             .+\.lock$|
           )$
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
@@ -47,7 +48,7 @@ repos:
       - id: fix-encoding-pragma
       - id: sort-simple-yaml
   - repo: https://github.com/hadenlabs/pre-commit-hooks
-    rev: 6c173538c37aa802949cae5ff487d702319ba80a
+    rev: bd40b567556efd1d3b207fd7a43054fb34e644fa
     hooks:
       - id: do-not-commit
       - id: markdown-link-check
