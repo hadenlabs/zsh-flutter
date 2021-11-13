@@ -1,3 +1,13 @@
+<!-- Space: ZshFlutter -->
+<!-- Parent: Project -->
+<!-- Title: Project Installation Antibody -->
+
+<!-- Label: ZshFlutter -->
+<!-- Label: Project -->
+<!-- Label: Installation -->
+<!-- Include: docs/disclaimer.md -->
+<!-- Include: ac:toc -->
+
 ### [antibody](https://github.com/getantibody/antibody) users
 
 If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
