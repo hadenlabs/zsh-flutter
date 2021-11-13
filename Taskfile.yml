@@ -6,11 +6,13 @@ includes:
   git: ./provision/task/git.yml
   docs: ./provision/task/docs.yml
   docker: ./provision/task/docker.yml
+  plantuml: ./provision/task/plantuml.yml
   gitflow: ./provision/task/gitflow.yml
   version: ./provision/task/version.yml
   mark: ./provision/task/mark.yml
   prettier: ./provision/task/prettier.yml
   sonar: ./provision/task/sonar.yml
+  diagrams: ./provision/diagrams/Taskfile.yml
 
 env:
   DOCKER:
@@ -35,7 +37,7 @@ vars:
   ORGANIZATION: hadenlabs
   REVIEWERS: luismayta
   PYTHON_VERSION: 3.9.2
-  NODE_VERSION: 14.16.1
+  NODE_VERSION: 16.6.1
   GIT_IGNORES: python,node,go,zsh,sonar
   GOLANGCI_VERSION: 1.42.0
   README_FILE: README.md
