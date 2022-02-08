@@ -15,7 +15,7 @@
 
   -->
 
-[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-flutter)](https://github.com/hadenlabs/zsh-flutter/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-flutter/lint-code)](https://github.com/hadenlabs/zsh-flutter/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+[![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-flutter)](https://github.com/hadenlabs/zsh-flutter/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-flutter/lint-code)](https://github.com/hadenlabs/zsh-flutter/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange)](https://keepachangelog.com)
 
 # zsh-flutter
 
@@ -91,6 +91,8 @@ to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-flutter` in a running zsh session.
 3.  Enjoy!
 
+## Usage
+
  <!-- Space: ZshFlutter -->
 <!-- Parent: Project -->
 <!-- Title: Functions -->
@@ -109,22 +111,7 @@ File a GitHub [issue](https://github.com/hadenlabs/zsh-flutter/issues).
 
 ## Contributing
 
-### Bug Reports & Feature Requests
-
-Please use the [issue tracker](https://github.com/hadenlabs/zsh-flutter/issues) to report any bugs or file feature requests.
-
-### Development
-
-In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
-
-1.  **Fork** the repo on GitHub
-2.  **Clone** the project to your own machine
-3.  **Commit** changes to your own branch
-4.  **Push** your work back up to your fork
-
-5.  Submit a **Pull Request** so that we can review your changes
-
-**NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
+See [Contributing](./docs/contributing.md).
 
 ## Module Versioning
 
@@ -143,7 +130,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2022 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 
