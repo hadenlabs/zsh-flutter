@@ -1,7 +1,3 @@
-<!-- Space: ZshFlutter -->
-<!-- Parent: Project -->
-<!-- Title: Authors -->
-
 # Authors
 
 ## Leads
