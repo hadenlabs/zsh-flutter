@@ -16,6 +16,7 @@ function flutter::load {
 
 function flutter::post_install {
     message_info "Post Install ${FLUTTER_PACKAGE_NAME}"
+    flutter::internal::flutter::post_install
     message_success "Success Install ${FLUTTER_PACKAGE_NAME}"
 }
 
