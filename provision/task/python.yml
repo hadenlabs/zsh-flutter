@@ -39,6 +39,20 @@ tasks:
       - task: check:python
       - task: check:pipenv
 
+  fmt:
+    desc: format black python.
+    run: once
+    cmds:
+      - cmd: >-
+          docker run
+          -it --rm
+          --platform linux/amd64
+          --entrypoint black
+          --user "$(id -u)":"$(id -g)"
+          --volume "$PWD":/code
+          --workdir /code
+          pyfound/black {{.CLI_ARGS}}
+
   environment:
     desc: Generate environment python.
     run: once
