@@ -154,7 +154,7 @@ title = "gitleaks config"
 
 [[rules]]
     description = "Env Var"
-    regex = '''(?i)(apikey|secret|key|api|password|pass)=[0-9a-zA-Z-_.{}]{4,120}'''
+    regex = '''(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
     tags = ["env"]
     [rules.allowlist]
         description = "ignore value fake"
