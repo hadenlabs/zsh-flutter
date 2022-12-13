@@ -20,12 +20,12 @@ function flutter::internal::flutter::post_install {
     touch "${ANDROID_FILE_REPOSITORIES}"
 
     [ "$(! core::exists sdkmanager)" ] && brew install --cask android-sdk
-    [ "$(! core::exists java)" ] && brew install --cask homebrew/cask-versions/adoptopenjdk8
+    [ "$(! core::exists java)" ] && brew install openjdk@11
 
     sdkmanager --update
 
     yes | sdkmanager "platform-tools"
-    yes | sdkmanager "platform-tools" "build-tools;30.0.3"
+    yes | sdkmanager "platform-tools" "build-tools;31.0.0"
 
     flutter config --android-sdk "${ANDROID_SDK_ROOT}"
 
