@@ -9,7 +9,7 @@ export FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra_releas
 export FLUTTER_VERSION="3.13.1-stable"
 export FLUTTER_MESSAGE_BREW="Please install brew or use antibody bundle hadenlabs/zsh-brew"
 export FLUTTER_PACKAGE_NAME=flutter
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_HOME="${HOME}/android-sdk"
 export ANDROID_FILE_REPOSITORIES="${HOME}/.android/repositories.cfg"
 export FLUTTER_PACKAGES=(
 )
