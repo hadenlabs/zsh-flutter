@@ -472,6 +472,11 @@ cython_debug/
 # Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
 poetry.toml
 
+# ruff
+.ruff_cache/
+
+# LSP config files
+pyrightconfig.json
 
 ### Sonar ###
 #Sonar generated dir
@@ -520,6 +525,12 @@ terraform.rc
 
 # Zsh completion-optimization dumpfile
 *zcompdump*
+
+# Zsh history
+.zsh_history
+
+# Zsh sessions
+.zsh_sessions
 
 # Zsh zcalc history
 .zcalc_history
