@@ -160,28 +160,10 @@ title = "gitleaks config"
         description = "ignore value fake"
         regexes = [
             '''host=HOST''',
+            '''--private-key={{.PRIVATE_KEY_FILE}}''',
+            '''PASSWORD=XXXXXX''',
         ]
 
-[[rules]]
-    description = "Email"
-    regex = '''[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}'''
-    tags = ["email"]
-    [rules.allowlist]
-        description = "ignore emails"
-        regexes = [
-            '''[a-zA-Z0-9._%+-]+@users.noreply.github.com''',
-            '''[a-zA-Z0-9._%+-]+@yopmail.com''',
-            '''git@github.com''',
-            '''git@gitlab.com''',
-            '''slovacus@gmail.com''',
-            '''luis@hadenlabs.com''',
-            '''security@hadenlabs.com''',
-            '''hola@hadenlabs.com''',
-            '''hello@hadenlabs.com''',
-            '''support@hadenlbas.com''',
-            '''support@hadenlabs.com''',
-            '''dum-u@hadenlabs.com''',
-        ]
 
 [[rules]]
     description = "High Entropy"
@@ -223,11 +205,19 @@ title = "gitleaks config"
     description = "Files with keys and credentials"
     file = '''(?i)(id_rsa|passwd|id_rsa.pub|pgpass)$'''
     tags = ["key", "files"]
+    [rules.allowlist]
+        description = "ignore some"
+        files = ['''(.*pub|env)$''']
 
 [[rules]]
     description = "Extension Files with keys and credentials"
     file = '''(.*?)(pub|pem|ppk|key)$'''
     tags = ["key", "files"]
+    [rules.allowlist]
+        description = "ignore file test"
+        files = [
+          '''.*-test.*$''',
+        ]
 
 # Global allowlist
 [allowlist]
@@ -254,6 +244,13 @@ title = "gitleaks config"
 
 [whitelist]
   description = "image and html allowlists"
+  paths = [
+    '''^vendor/''',
+    '''^bower_components/''',
+    '''^public/''',
+    '''^node_modules/''',
+    '''^theme/''',
+  ]
   files = [
     '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
     '''^\.gitignore$''',
@@ -262,7 +259,5 @@ title = "gitleaks config"
     '''^yarn.lock$''',
     '''^sonar-project.properties$''',
   ]
-  paths = [
-    '''^vendor/(.*?)$''',
-    '''^node_modules/(.*?)$''',
-  ]
+
+  commits = []
