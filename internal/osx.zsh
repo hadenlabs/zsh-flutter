@@ -18,17 +18,21 @@ function flutter::internal::flutter::post_install {
     pod setup
 
     touch "${ANDROID_FILE_REPOSITORIES}"
+    mkdir -p "${ANDROID_HOME}"
 
-    [ "$(! core::exists sdkmanager)" ] && brew install --cask android-sdk
     [ "$(! core::exists java)" ] && brew install openjdk@11
+    [ "$(! core::exists sdkmanager)" ] && brew install --cask android-commandlinetools
 
-    sdkmanager --update
+    sdkmanager --update --sdk_root="${ANDROID_HOME}"
+    sdkmanager --install "cmdline-tools;latest" --sdk_root="${ANDROID_HOME}"
+    yes | sdkmanager "platforms;android-33" --sdk_root="${ANDROID_HOME}"
+    yes | sdkmanager "platform-tools" --sdk_root="${ANDROID_HOME}"
+    yes | sdkmanager "platform-tools" "build-tools;33.0.0" --sdk_root="${ANDROID_HOME}"
+    yes | sdkmanager "extras;google;m2repository" --sdk_root="${ANDROID_HOME}"
+    yes | sdkmanager "extras;android;m2repository" --sdk_root="${ANDROID_HOME}"
 
-    yes | sdkmanager "platform-tools"
-    yes | sdkmanager "platform-tools" "build-tools;31.0.0"
+    flutter config --android-sdk "${ANDROID_HOME}"
 
-    flutter config --android-sdk "${ANDROID_SDK_ROOT}"
-
-    yes | flutter doctor --android-licenses
+    yes | flutter doctor --android-licenses --sdk_root="${ANDROID_HOME}"
     message_success "Flutter Dependences Installed"
 }
