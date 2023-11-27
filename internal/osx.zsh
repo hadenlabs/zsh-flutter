@@ -20,7 +20,7 @@ function flutter::internal::flutter::post_install {
     touch "${ANDROID_FILE_REPOSITORIES}"
     mkdir -p "${ANDROID_HOME}"
 
-    [ "$(! core::exists java)" ] && brew install openjdk@11
+    [ "$(! core::exists java)" ] && brew install openjdk@11 openjdk@17
     [ "$(! core::exists sdkmanager)" ] && brew install --cask android-commandlinetools
 
     sdkmanager --update --sdk_root="${ANDROID_HOME}"
