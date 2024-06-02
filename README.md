@@ -35,7 +35,7 @@ This is a list of plugins that need to be installed previously to enjoy all the 
 <!-- Label: Project -->
 <!-- Label: Installation -->
 <!-- Label: Oh-My-Zsh -->
-<!-- Include: ./../../disclaimer.md -->
+<!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ### [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) users
@@ -53,7 +53,7 @@ If you're using [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), install this pl
    <!-- Label: Project -->
    <!-- Label: Installation -->
    <!-- Label: Antigen -->
-   <!-- Include: ./../../disclaimer.md -->
+   <!-- Include: docs/disclaimer.md -->
    <!-- Include: ac:toc -->
 
 ### [antigen](https://github.com/zsh-users/antigen) users
@@ -69,7 +69,7 @@ If you're using [Antigen](https://github.com/zsh-users/antigen), install this pl
    <!-- Label: ZshFlutter -->
    <!-- Label: Project -->
    <!-- Label: Installation -->
-   <!-- Include: ./../../disclaimer.md -->
+   <!-- Include: docs/disclaimer.md -->
    <!-- Include: ac:toc -->
 
 ### [antibody](https://github.com/getantibody/antibody) users
@@ -110,7 +110,7 @@ task setup
 <!-- Parent: ZshFlutter -->
 <!-- Title: Functions ZshFlutter -->
 <!-- Label: Functions -->
-<!-- Include: disclaimer.md -->
+<!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ## Functions
@@ -142,7 +142,7 @@ Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following co
 
 ## Copyright
 
-Copyright © 2018-2023 [Hadenlabs](https://hadenlabs.com)
+Copyright © 2018-2024 [Hadenlabs](https://hadenlabs.com)
 
 ## Trademarks
 
