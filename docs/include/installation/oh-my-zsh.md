@@ -5,7 +5,7 @@
 <!-- Label: Project -->
 <!-- Label: Installation -->
 <!-- Label: Oh-My-Zsh -->
-<!-- Include: ./../../disclaimer.md -->
+<!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ### [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) users

@@ -5,7 +5,7 @@
 <!-- Label: Project -->
 <!-- Label: Installation -->
 <!-- Label: Antigen -->
-<!-- Include: ./../../disclaimer.md -->
+<!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ### [antigen](https://github.com/zsh-users/antigen) users

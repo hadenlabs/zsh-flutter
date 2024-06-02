@@ -4,7 +4,7 @@
 <!-- Label: ZshFlutter -->
 <!-- Label: Project -->
 <!-- Label: Installation -->
-<!-- Include: ./../../disclaimer.md -->
+<!-- Include: docs/disclaimer.md -->
 <!-- Include: ac:toc -->
 
 ### [antibody](https://github.com/getantibody/antibody) users
